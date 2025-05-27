@@ -1,0 +1,71 @@
+{
+  "query": "Selection of jet clustering algorithms for event reconstruction at the reconstruction level, aimed at studying Higgs Self-Coupling at the XCC, an X-ray Free Electron Laser-based gamma-gamma Compton Collider Higgs Factory.",
+  "timestamp": "2025-05-12 11:33:23.781670",
+  "recommendations": [
+    {
+      "tweet_text": "The XCC collider, designed for precision Higgs self-coupling studies, achieves a Higgs production rate of 80,000/year at 62.5 GeV photon collisions, matching the ILC at 250 GeV. Upgrading to 380 GeV doubles the \ud835\udefe\ud835\udefe\u2192HH cross-section compared to e+e- colliders at 500 GeV (arXiv:2306.10057).",
+      "score": 0.7035988626624204,
+      "paper_ids": [
+        "2306.10057"
+      ],
+      "batch_id": "batch_1",
+      "component_scores": {
+        "tweet_relevance_score": 0.95,
+        "avg_normalized_weight": 0.3339971566560513,
+        "lambda_weight": 0.6
+      }
+    },
+    {
+      "tweet_text": "Recent advancements in jet clustering and flavor tagging at ILC500 are set to enhance Higgs self-coupling measurement precision beyond 20%. Improved overlay modeling and lepton reconstruction, including tau leptons, also contribute to this boost in sensitivity, paving the way for more accurate BSM physics explorations (arXiv:2307.16515).",
+      "score": 0.703589523461201,
+      "paper_ids": [
+        "2307.16515"
+      ],
+      "batch_id": "batch_2",
+      "component_scores": {
+        "tweet_relevance_score": 0.95,
+        "avg_normalized_weight": 0.33397380865300247,
+        "lambda_weight": 0.6
+      }
+    },
+    {
+      "tweet_text": "Delphes v3 offers versatile jet clustering options for Higgs self-coupling studies at XCC. Users can select from generated, calorimeter, or particle-flow jets, each tailored for specific detector responses and pile-up conditions (arXiv:1307.6346). This flexibility enhances the accuracy of jet reconstruction, crucial for analyzing complex final states.",
+      "score": 0.6735865707732483,
+      "paper_ids": [
+        "1307.6346"
+      ],
+      "batch_id": "batch_0",
+      "component_scores": {
+        "tweet_relevance_score": 0.9,
+        "avg_normalized_weight": 0.3339664269331207,
+        "lambda_weight": 0.6
+      }
+    },
+    {
+      "tweet_text": "Exploring jet clustering algorithms at the XCC collider reveals superior Higgs self-coupling measurement capabilities. The XCC's unique \u03b3\u03b3 resonance at 125 GeV enables precise branching ratio measurements, crucial for Higgs decay studies (arXiv:2306.10057). #ColliderPhysics #HiggsBoson",
+      "score": 0.5703878339139489,
+      "paper_ids": [
+        "2306.10057"
+      ],
+      "batch_id": "batch_3",
+      "component_scores": {
+        "tweet_relevance_score": 0.95,
+        "avg_normalized_weight": 0.0009695847848723588,
+        "lambda_weight": 0.6
+      }
+    },
+    {
+      "tweet_text": "Innovative jet clustering techniques at XCC enhance Higgs self-coupling studies! JADE clustering optimizes event selection, achieving a statistical significance of \u03a3=0.922\u00b10.067 (arXiv:1205.5292). Ideal clustering predicts even higher accuracy, hinting at a 5\u03c3 detection level with perfect execution. #ParticlePhysics #HiggsBoson",
+      "score": 0.5703825613330846,
+      "paper_ids": [
+        "1205.5292"
+      ],
+      "batch_id": "batch_4",
+      "component_scores": {
+        "tweet_relevance_score": 0.95,
+        "avg_normalized_weight": 0.0009564033327118114,
+        "lambda_weight": 0.6
+      }
+    }
+  ]
+}

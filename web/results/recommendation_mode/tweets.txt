@@ -1,0 +1,23 @@
+Query: Selection of jet clustering algorithms for event reconstruction at the reconstruction level, aimed at studying Higgs Self-Coupling at the XCC, an X-ray Free Electron Laser-based gamma-gamma Compton Collider Higgs Factory.
+
+Recommendations:
+
+[1] The XCC collider, designed for precision Higgs self-coupling studies, achieves a Higgs production rate of 80,000/year at 62.5 GeV photon collisions, matching the ILC at 250 GeV. Upgrading to 380 GeV doubles the 𝛾𝛾→HH cross-section compared to e+e- colliders at 500 GeV (arXiv:2306.10057).
+    Papers: 2306.10057
+    Score: 0.7036
+
+[2] Recent advancements in jet clustering and flavor tagging at ILC500 are set to enhance Higgs self-coupling measurement precision beyond 20%. Improved overlay modeling and lepton reconstruction, including tau leptons, also contribute to this boost in sensitivity, paving the way for more accurate BSM physics explorations (arXiv:2307.16515).
+    Papers: 2307.16515
+    Score: 0.7036
+
+[3] Delphes v3 offers versatile jet clustering options for Higgs self-coupling studies at XCC. Users can select from generated, calorimeter, or particle-flow jets, each tailored for specific detector responses and pile-up conditions (arXiv:1307.6346). This flexibility enhances the accuracy of jet reconstruction, crucial for analyzing complex final states.
+    Papers: 1307.6346
+    Score: 0.6736
+
+[4] Exploring jet clustering algorithms at the XCC collider reveals superior Higgs self-coupling measurement capabilities. The XCC's unique γγ resonance at 125 GeV enables precise branching ratio measurements, crucial for Higgs decay studies (arXiv:2306.10057). #ColliderPhysics #HiggsBoson
+    Papers: 2306.10057
+    Score: 0.5704
+
+[5] Innovative jet clustering techniques at XCC enhance Higgs self-coupling studies! JADE clustering optimizes event selection, achieving a statistical significance of Σ=0.922±0.067 (arXiv:1205.5292). Ideal clustering predicts even higher accuracy, hinting at a 5σ detection level with perfect execution. #ParticlePhysics #HiggsBoson
+    Papers: 1205.5292
+    Score: 0.5704
