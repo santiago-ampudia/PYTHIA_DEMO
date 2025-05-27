@@ -1,0 +1,158 @@
+{
+  "top_chunks_topic": [
+    {
+      "chunk_id": "chunk_5",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7741937637329102,
+      "sim_subtopic_chunk": 0.7748650312423706,
+      "sim_enhanced_chunk": 0.7613152265548706
+    },
+    {
+      "chunk_id": "chunk_2",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7513828873634338,
+      "sim_subtopic_chunk": 0.7709932327270508,
+      "sim_enhanced_chunk": 0.7471837997436523
+    },
+    {
+      "chunk_id": "chunk_1",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7412421703338623,
+      "sim_subtopic_chunk": 0.7764811515808105,
+      "sim_enhanced_chunk": 0.7756743431091309
+    },
+    {
+      "chunk_id": "chunk_3",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7251428365707397,
+      "sim_subtopic_chunk": 0.7444213628768921,
+      "sim_enhanced_chunk": 0.7414261102676392
+    },
+    {
+      "chunk_id": "chunk_4",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7250880002975464,
+      "sim_subtopic_chunk": 0.7489579916000366,
+      "sim_enhanced_chunk": 0.78087317943573
+    }
+  ],
+  "top_chunks_subtopic": [
+    {
+      "chunk_id": "chunk_1",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7412421703338623,
+      "sim_subtopic_chunk": 0.7764811515808105,
+      "sim_enhanced_chunk": 0.7756743431091309
+    },
+    {
+      "chunk_id": "chunk_5",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7741937637329102,
+      "sim_subtopic_chunk": 0.7748650312423706,
+      "sim_enhanced_chunk": 0.7613152265548706
+    },
+    {
+      "chunk_id": "chunk_2",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7513828873634338,
+      "sim_subtopic_chunk": 0.7709932327270508,
+      "sim_enhanced_chunk": 0.7471837997436523
+    },
+    {
+      "chunk_id": "chunk_4",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7250880002975464,
+      "sim_subtopic_chunk": 0.7489579916000366,
+      "sim_enhanced_chunk": 0.78087317943573
+    },
+    {
+      "chunk_id": "chunk_3",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7251428365707397,
+      "sim_subtopic_chunk": 0.7444213628768921,
+      "sim_enhanced_chunk": 0.7414261102676392
+    }
+  ],
+  "top_chunks_enhanced": [
+    {
+      "chunk_id": "chunk_4",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7250880002975464,
+      "sim_subtopic_chunk": 0.7489579916000366,
+      "sim_enhanced_chunk": 0.78087317943573
+    },
+    {
+      "chunk_id": "chunk_1",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7412421703338623,
+      "sim_subtopic_chunk": 0.7764811515808105,
+      "sim_enhanced_chunk": 0.7756743431091309
+    },
+    {
+      "chunk_id": "chunk_5",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7741937637329102,
+      "sim_subtopic_chunk": 0.7748650312423706,
+      "sim_enhanced_chunk": 0.7613152265548706
+    },
+    {
+      "chunk_id": "chunk_2",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7513828873634338,
+      "sim_subtopic_chunk": 0.7709932327270508,
+      "sim_enhanced_chunk": 0.7471837997436523
+    },
+    {
+      "chunk_id": "chunk_3",
+      "arxiv_id": "2306.10057",
+      "sim_topic_metadata": 0.751883327960968,
+      "sim_subtopic_metadata": 0.7565019726753235,
+      "sim_enhanced_metadata": 0.7432984113693237,
+      "sim_topic_chunk": 0.7251428365707397,
+      "sim_subtopic_chunk": 0.7444213628768921,
+      "sim_enhanced_chunk": 0.7414261102676392
+    }
+  ]
+}
