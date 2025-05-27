@@ -1,0 +1,55 @@
+{
+  "query": "what is the production rate of the Higgs boson per year at the XCC, an X-ray FEL-based gamma gamma Compton Collider Higgs Factory",
+  "answer": "The X-ray FEL-based gamma gamma Compton Collider Higgs Factory (XCC) achieves a Higgs boson production rate of 80,000 Higgs bosons per 10^7 seconds per year [2306.10057].",
+  "quality_score": 0.9,
+  "evaluation_explanation": "",
+  "timestamp": "2025-05-18 20:31:11.311930",
+  "attempt_number": 0,
+  "chunks_used": [
+    {
+      "chunk_id": "2306.10057_41",
+      "arxiv_id": "2306.10057",
+      "final_weight_adjusted": 1.0,
+      "llm_summary": "The XCC (X-ray FEL-based gamma gamma Compton Collider Higgs Factory) utilizes 62.8 GeV electron beams colliding with 1 keV X-ray free electron laser (XFEL) beams to produce 62.5 GeV photon beams. This setup achieves a Higgs boson production rate of 80,000 Higgs bosons per 10^7 seconds per year, comparable to the ILC Higgs rate at a center-of-mass energy of 250 GeV. The XCC employs cold copper distributed coupling (C3) accelerator technology, which, unlike previous gamma gamma collider designs using optical wavelengths, offers a sharply peaked gamma gamma center-of-mass energy spectrum. This feature enables model-independent measurements of Higgs couplings with precision equivalent to e+ e- colliders. The XCC's design also allows for an upgrade to a center-of-mass energy of 380 GeV, doubling the cross-section for gamma gamma -> HH compared to e+ e- -> ZHH at 500 GeV. The paper discusses design challenges and necessary R&D, including demonstrators.",
+      "topic_similarity": null,
+      "subtopic_similarity": null,
+      "enhanced_similarity": null
+    },
+    {
+      "chunk_id": "2306.10057_59",
+      "arxiv_id": "2306.10057",
+      "final_weight_adjusted": 0.9979686107320305,
+      "llm_summary": "The text provides detailed comparative data on the annual production rates of single and double Higgs boson events at the X-ray Free Electron Laser (FEL)-based gamma-gamma Compton Collider (XCC) and the International Linear Collider (ILC)/C3. For the XCC operating at a center-of-mass energy (sqrt{s}) of 380 GeV, the luminosity is reported as 4900 fb^-1 with a beam power of 4.9 MW over a 10-year period. The XCC is noted to produce 1.3 x 10^6 single Higgs events and 1800 double Higgs events. In contrast, the ILC/C3, with a beam power of 4.0 MW at 250 GeV, produces 0.5 x 10^6 single Higgs events in Stage I and a total of 1.5 x 10^6 single Higgs events over 20 years. The XCC also produces 2.9 x 10^6 top quark pair (t-bar{t}) events compared to the ILC/C3's 2.0 x 10^6. Additionally, the XCC facilitates the measurement of the e^- gamma -> e^- H reaction, which is crucial for determining the Higgs boson's partial width (Gamma_gamma_gamma) and provides model-independent Higgs coupling measurements. This reaction has a cross-section of 4.0 fb at 380 GeV, with an expected 13,000 events over ten years. The text also discusses the luminosity spectrum for e^- gamma collisions, essential for precise Higgs physics measurements at the XCC.",
+      "topic_similarity": null,
+      "subtopic_similarity": null,
+      "enhanced_similarity": null
+    },
+    {
+      "chunk_id": "2306.10057_46",
+      "arxiv_id": "2306.10057",
+      "final_weight_adjusted": 0.9191488113318853,
+      "llm_summary": "The XCC, despite having four times less luminosity than the ILC/C3, produces nearly three times as many Higgs bosons due to resonance production. It measures the product of the Higgs production cross-section sigma(gamma gamma -> H) and the branching ratio BR(H -> X), which is proportional to the partial widths Gamma_gamma_gamma and Gamma_X over the total Higgs width Gamma_tot, at a center-of-mass energy of 125 GeV. This measurement is crucial for various Higgs decay modes like b b-bar, c c-bar, and WW*. The XCC's precision for these measurements is expected to be comparable to the ILC, assuming similar branching ratio precision. Additionally, the XCC's design allows for an alternate polarization configuration that narrows the leading edge width of the energy spectrum but reduces the Higgs production rate to 40,000 per year. This setup can measure the total Higgs width with an accuracy of 4.5 MeV, which is adequate if the width is a few tens of MeV but not if it is close to the Standard Model prediction of approximately 4.0 MeV.",
+      "topic_similarity": null,
+      "subtopic_similarity": null,
+      "enhanced_similarity": null
+    },
+    {
+      "chunk_id": "2306.10057_56",
+      "arxiv_id": "2306.10057",
+      "final_weight_adjusted": 0.8387415141166914,
+      "llm_summary": "The XCC is designed to study the Higgs self-coupling at a center-of-mass energy of 380 GeV, where the cross-section for gamma gamma -> HH is twice that of e+ e- -> ZHH at 500 GeV. The simpler final state of HH compared to ZHH offers potential measurement advantages. The cross-section for gamma gamma -> HH shows a significant dependence on the anomalous Higgs self-coupling delta kappa. The energy upgrade to 380 GeV involves significant changes in the collider's parameters, including halving the pulse length of the XFEL to 10 micrometers and reducing the final focus beta* by a factor of three. These adjustments pose new challenges, particularly in X-ray focusing due to the reduced XFEL photon energy of 0.34 keV. The design parameters for this upgrade are detailed, although some entries remain unspecified due to ongoing development.",
+      "topic_similarity": null,
+      "subtopic_similarity": null,
+      "enhanced_similarity": null
+    },
+    {
+      "chunk_id": "1205.5292_91",
+      "arxiv_id": "1205.5292",
+      "final_weight_adjusted": 0.43588035837442296,
+      "llm_summary": "This chunk discusses the feasibility of measuring Higgs pair creation at a Photon Linear Collider (PLC), focusing on the sensitivity to the anomalous self-coupling of the Higgs boson. The optimal gamma-gamma collision energy is identified as approximately 270 GeV for a Higgs mass of 120 GeV/c^2. The study highlights the challenge of large background events such as gamma-gamma -> W+ W-, ZZ, and b b-bar, which can be mitigated by correct track assignment to parent partons. It is noted that Higgs pair events can be observed with a statistical significance of about 5 sigma by operating the PLC for five years. Although this chunk provides insights into Higgs pair production, it focuses on a different collider setup (PLC) rather than the XCC.",
+      "topic_similarity": null,
+      "subtopic_similarity": null,
+      "enhanced_similarity": null
+    }
+  ]
+}

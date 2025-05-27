@@ -1,0 +1,7 @@
+Query: what is the production rate of the Higgs boson per year at the XCC, an X-ray FEL-based gamma gamma Compton Collider Higgs Factory
+
+Answer: The X-ray FEL-based gamma gamma Compton Collider Higgs Factory (XCC) achieves a Higgs boson production rate of 80,000 Higgs bosons per 10^7 seconds per year [2306.10057].
+
+Quality Score: 0.9
+Evaluation Explanation:
+

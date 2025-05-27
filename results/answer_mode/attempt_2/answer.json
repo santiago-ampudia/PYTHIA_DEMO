@@ -1,0 +1,9 @@
+{
+  "query": "what is the production rate of the Higgs boson per year at the XCC, an X-ray FEL-based gamma gamma Compton Collider Higgs Factory",
+  "answer": "Error generating answer: OPENAI_API_KEY environment variable not set. Please set it in your .env file.",
+  "quality_score": 0.5,
+  "evaluation_explanation": "Error during evaluation: OPENAI_API_KEY environment variable not set. Please set it in your .env file.",
+  "timestamp": "2025-05-18 20:27:49.499722",
+  "attempt_number": 2,
+  "chunks_used": []
+}

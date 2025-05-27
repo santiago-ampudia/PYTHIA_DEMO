@@ -1,0 +1,20 @@
+{
+  "original_queries": [
+    "Qubit architecture types and their impact on gate error rates in quantum simulations",
+    "Impact of different qubit architectures on gate error rates in quantum simulations, emphasizing the Ising model",
+    "Comparative analysis of qubit architecture types for reducing gate error rates in quantum simulations with focus on the Ising model",
+    "Evaluation of different qubit architectures for optimizing gate error rates in quantum simulations specifically using the Ising model",
+    "Optimization of qubit architecture for minimizing gate errors in quantum simulations of the 8-site Ising model"
+  ],
+  "queries_with_midpoints": [
+    "Qubit architecture types and their impact on gate error rates in quantum simulations",
+    "Comparative analysis of qubit architectures and their influence on gate error rates, focusing on quantum simulations",
+    "Impact of different qubit architectures on gate error rates in quantum simulations, emphasizing the Ising model",
+    "Evaluation of qubit architecture performance in minimizing gate error rates in quantum simulations, focusing on the Ising model",
+    "Comparative analysis of qubit architecture types for reducing gate error rates in quantum simulations with focus on the Ising model",
+    "Assessment of qubit architecture performance in minimizing gate error rates during quantum simulations of the Ising model",
+    "Evaluation of different qubit architectures for optimizing gate error rates in quantum simulations specifically using the Ising model",
+    "Comparative analysis of qubit architectures for reducing gate error rates in quantum simulations using the Ising model with varying system sizes",
+    "Optimization of qubit architecture for minimizing gate errors in quantum simulations of the 8-site Ising model"
+  ]
+}

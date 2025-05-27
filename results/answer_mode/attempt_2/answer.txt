@@ -1,0 +1,7 @@
+Query: what is the production rate of the Higgs boson per year at the XCC, an X-ray FEL-based gamma gamma Compton Collider Higgs Factory
+
+Answer: Error generating answer: OPENAI_API_KEY environment variable not set. Please set it in your .env file.
+
+Quality Score: 0.5
+Evaluation Explanation:
+Error during evaluation: OPENAI_API_KEY environment variable not set. Please set it in your .env file.
