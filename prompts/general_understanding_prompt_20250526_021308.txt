@@ -1,0 +1,135 @@
+SYSTEM PROMPT:
+
+You are an expert in software engineering, computer science, and technical analysis. Your task is to deeply analyze the provided code snippets and repository information to extrapolate and articulate the complete technical functionality of the repository.
+
+Your output MUST:
+1. Be a pure technical description saturated with domain-specific terminology and technical jargon
+2. Focus heavily on the code snippets provided, using them as the primary source of information
+3. Extrapolate from the code to understand the broader technical systems and patterns implemented
+4. MAXIMIZE the use of specialized technical terminology, frameworks, algorithms, design patterns, and methodologies
+5. Maintain technical precision while providing a comprehensive understanding of the system
+6. Connect implementation details to broader technical concepts and paradigms using field-specific vocabulary
+
+CRITICAL GUIDELINES:
+- MAXIMIZE technical jargon density - use as many precise technical terms as possible
+- DO NOT include meta-language like "This query seeks literature" or "based on the repository"
+- DO NOT refer to the snippets or README directly - incorporate their content seamlessly
+- DO focus exclusively on the technical aspects and functionality using specialized terminology
+- DO use your knowledge to fill gaps in understanding, but always ground this in the actual code provided
+- DO prioritize code snippets as your primary source of information, using README content as secondary context
+- DO use specific algorithm names, design pattern terminology, and framework-specific concepts
+- DO include technical acronyms, mathematical notation, and specialized vocabulary where appropriate
+
+The output will be used for semantic retrieval of academic papers, so technical precision and jargon density are CRITICAL. Your description should be EXTREMELY dense with technical terms, specialized vocabulary, and domain-specific concepts that accurately represent what the repository is implementing.
+
+Your output should be 2-4 paragraphs of pure technical description that reads like a highly specialized academic paper abstract or technical specification document. It should be written at a level that assumes deep technical expertise from the reader and makes no concessions to simplify or explain the terminology used.
+
+
+USER PROMPT:
+
+Here is the detailed analysis of a GitHub repository:
+
+
+=================================================================
+                       REPOSITORY DOCUMENTATION
+=================================================================
+
+The following section contains the documentation from README files found in the repository. 
+These files provide an overview of the project, its purpose, installation instructions, 
+usage examples, and other important information directly from the project maintainers. 
+The README files are presented in order of their location in the repository structure, 
+starting from the root directory and proceeding to deeper levels.
+
+
+
+
+--- README: README.md ---
+
+# XCC_HH_bbbb
+Analysis of ɣɣ->HH->bbbb as if done with the XCC -- uses python.
+
+
+--- README: delphesOutput/README.md ---
+
+Root files coming from Delphes as output used for the analysis: https://drive.google.com/drive/folders/1heEIwIFBPAD8I4_5UOle2Hxz0qOtBqpg?usp=sharing
+
+
+--- README: analysis/README.md ---
+
+code for the full obtention of the sensitivity of the measurment of the di-Higgs cross-section at 380 GeV.
+
+
+--- README: MCSamplesDelphesSim/README.md ---
+
+Codes to run Delphes and perform fast detector simulation (Delphes) using the MC samples.
+
+Input: series of .hepmc files for each event topology
+Output: .root file for each topology
+
+
+--- README: delphes_config/README.md ---
+
+My customized settings for Delphes, a framework for fast simulation of a generic collider experiment, for gamma gamma at XCC.
+
+
+--- README: analysis/featureExtraction/README.md ---
+
+-- root code to extract relevant physical observables from events that pass the preselection.
+-- code that converts the root TTrees with the observables to .csv files and prepares the data to for the pre-training of the decision trees.
+
+
+--- README: analysis/sensitivityCalculationML/README.md ---
+
+Full pipeline to perform signal-background separation using XGBoost and a genetic algorithm and then calculate the sensitivity of the measurment of the di-Higgs cross-section.
+
+
+--- README: delphes_config/cards/README.md ---
+
+Cards detailing the specific detector settings for gamma gamma at XCC. 
+1) delphes_card_SiD_2024_XCC.tcl is used for the analysis and based on SiD from https://arxiv.org/pdf/2110.09965
+2) delphes_card_ILD_DSiDi_PileUp.tcl is used for specific pileup studies and based on SiD from https://arxiv.org/pdf/1602.07748, as well as on ATLAS and CMS pileup cards.
+
+
+--- README: delphes_config/modules/README.md ---
+
+Delphes customized modules for gamma gamma at XCC.
+
+
+
+=================================================================
+                       REPOSITORY FILE STRUCTURE
+=================================================================
+
+This section provides information about the key files in the repository.
+
+
+-----------------------------------------------------------------
+MAIN FILES:
+The following files were identified as main files in the repository based on 
+their names matching common patterns for entry points, main scripts, or core 
+functionality (such as 'main', 'app', 'train', etc.). These files are likely 
+to contain the primary functionality and entry points of the project.
+-----------------------------------------------------------------
+
+- epConstrainHH.h (delphes_config/modules/epConstrainHH.h)
+- pxyConstrainHH_dict.cxx (delphes_config/modules/pxyConstrainHH_dict.cxx)
+- pxyConstrainHH_dict_rdict.pcm (delphes_config/modules/pxyConstrainHH_dict_rdict.pcm)
+- eqmConstrainHH_dict_rdict.pcm (delphes_config/modules/eqmConstrainHH_dict_rdict.pcm)
+- epConstrainHH_dict.cxx (delphes_config/modules/epConstrainHH_dict.cxx)
+
+
+-----------------------------------------------------------------
+MOST FREQUENTLY MODIFIED FILES:
+The following files have been identified as the most frequently modified files 
+in the repository based on the number of commits. These files represent the most 
+actively developed parts of the codebase and are likely to contain core functionality 
+that is frequently updated or improved.
+-----------------------------------------------------------------
+
+- delphes_card_SiD_2024_XCC.tcl (delphes_config/cards/delphes_card_SiD_2024_XCC.tcl)
+- downloadqqHX.sh (MCSamplesDelphesSim/downloadqqHX.sh)
+- downloadqqX.sh (MCSamplesDelphesSim/downloadqqX.sh)
+- downloadqqqqX.sh (MCSamplesDelphesSim/downloadqqqqX.sh)
+- downloadNewZZ.sh (MCSamplesDelphesSim/downloadNewZZ.sh)
+
+Based on this repository analysis, generate a comprehensive query for academic literature search.

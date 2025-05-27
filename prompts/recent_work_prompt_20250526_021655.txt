@@ -1,0 +1,1073 @@
+SYSTEM PROMPT:
+
+You are an expert in software engineering, computer science, and technical analysis. Your task is to analyze the provided recent commit information and hot file code snippets to create a precise technical description of the CURRENT DEVELOPMENT FOCUS and RECENT CHANGES in the repository.
+
+Your output MUST:
+1. Be a pure technical description focused specifically on the RECENT CHANGES and ACTIVE DEVELOPMENT areas
+2. Concentrate on the actual code changes in the commits and the key functionality in the hot files
+3. Identify specific technical problems being solved and implementation details being refined
+4. Use precise technical terminology related to the frameworks, algorithms, and design patterns evident in the code
+5. Highlight the technical evolution occurring in the codebase based on the commit history
+6. Connect the recent changes to their technical implications and purpose
+
+CRITICAL GUIDELINES:
+- FOCUS ON RECENCY - emphasize what is happening NOW in the codebase, not general functionality
+- BE SPECIFIC - reference the actual technical changes shown in the commits and hot files
+- USE TECHNICAL PRECISION - employ domain-specific terminology and technical jargon
+- DO NOT include meta-language like "This query seeks literature" or "based on the repository"
+- DO NOT refer to the commits or hot files directly - incorporate their content seamlessly
+- DO focus on the technical significance of the recent changes and active development areas
+- DO identify technical patterns and architectural decisions evident in the recent work
+- DO highlight specific algorithms, data structures, or techniques being implemented or modified
+
+The output will be used for semantic retrieval of academic papers related to the CURRENT technical challenges and focus areas of the project. Your description should be dense with technical terms and specialized vocabulary that accurately represent what the developers are CURRENTLY working on.
+
+Your output should be 2-4 paragraphs of precise technical description that reads like a highly specialized academic paper abstract focused on cutting-edge developments in this technical domain. It should clearly convey the specific technical problems being addressed and solutions being implemented in the recent development work.
+
+
+USER PROMPT:
+Here is the repository analysis:
+
+##############################################################################
+#                     RECENT REPOSITORY ACTIVITY ANALYSIS                      #
+##############################################################################
+
+This section contains an analysis of the most recent commits in the repository.
+Recent commits provide critical insight into the active development focus and
+current priorities of the project. They reveal:
+
+1. CURRENT DEVELOPMENT PRIORITIES: The files and features that developers are
+   actively working on right now, indicating the most important aspects of the
+   project from the developers' perspective.
+
+2. LATEST TECHNICAL CHALLENGES: The specific problems being solved and
+   implementation details being refined, showing the technical hurdles the
+   project is currently addressing.
+
+3. EVOLUTION OF THE CODEBASE: How the project is changing over time, including
+   new features, bug fixes, refactoring, and architectural changes.
+
+4. DEVELOPER INTENT: Through commit messages and code changes, you can see the
+   reasoning behind modifications and the direction the project is heading.
+
+The following commits represent the most recent development activity, with
+detailed information about what files were changed and the specific code
+modifications made.
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Create README.md
+
+CHANGED FILES:
+- delphesOutput/README.md
+```diff
+    Create README.md
+
+new file mode 100644
+--- /dev/null
++++ b/delphesOutput/README.md
+@@ -0,0 +1 @@
++Root files coming from Delphes as output used for the analysis: https://drive.google.com/drive/folders/1heEIwIFBPAD8I4_5UOle2Hxz0qOtBqpg?usp=sharing
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Create extractedFeatures.md
+
+CHANGED FILES:
+- analysis/featureExtraction/extractedFeatures.md
+```diff
+    Create extractedFeatures.md
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/featureExtraction/extractedFeatures.md
+@@ -0,0 +1 @@
++Files with extracted features used for analysis (.csv and TTree): https://drive.google.com/drive/folders/1heEIwIFBPAD8I4_5UOle2Hxz0qOtBqpg?usp=sharing
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Update README.md
+
+CHANGED FILES:
+- README.md
+```diff
+    Update README.md
+
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,2 @@
+ # XCC_HH_bbbb
+-Analysis of ɣɣ->HH->bbbb as if done with the XCC.
++Analysis of ɣɣ->HH->bbbb as if done with the XCC -- uses python.
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Update README.md
+
+CHANGED FILES:
+- analysis/sensitivityCalculationML/README.md
+```diff
+    Update README.md
+
+--- a/analysis/sensitivityCalculationML/README.md
++++ b/analysis/sensitivityCalculationML/README.md
+@@ -1 +1 @@
+-Full pipleine to perform signal-background separation using XGBoost and a genetic algorithm and then calculate the sensitivity of the measurment of the di-Higgs cross-section.
++Full pipeline to perform signal-background separation using XGBoost and a genetic algorithm and then calculate the sensitivity of the measurment of the di-Higgs cross-section.
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Add files via upload
+
+CHANGED FILES:
+- analysis/sensitivityCalculationML/BDTGs.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/BDTGs.py
+@@ -0,0 +1,369 @@
++import os
++import numpy as np
++import pandas as pd
++import xgboost as xgb
++from sklearn.model_selection import train_test_split
++from sklearn.preprocessing import StandardScaler
++from sklearn.metrics import roc_auc_score
++import matplotlib.pyplot as plt
++from tqdm import tqdm
++import argparse
++import sys
++import subprocess
++
++np.random.seed(42)
++
++def load_data(signal_file, background_files, test_size=0.25):
++    signal_data = pd.read_csv(signal_file)
++    signal_data['label'] = 1  # Add label column with value 1 (signal)
++    
++    print(f"\nSignal file: {os.path.basename(signal_file)}")
++    print(f"Total signal events: {len(signal_data)}")
++    
++    feature_names = [col for col in signal_data.columns if col != 'label']
++    
++    #same signal events for all background types
++    signal_train, signal_test = train_test_split(
++        signal_data, test_size=test_size, random_state=42
++    )
++    
++    print(f"  Signal events for training: {len(signal_train)}")
++    print(f"  Signal events for testing: {len(signal_test)}")
++    
++    signal_train.to_csv('signal_train.csv', index=False)
++    signal_test.to_csv('signal_test.csv', index=False)
++    print(f"  Saved signal training events to signal_train.csv")
++    print(f"  Saved signal testing events to signal_test.csv")
++    
++    background_dfs = {}
++    
++    print("\nBackground files:")
++    for bg_file in background_files:
++        bg_name = os.path.splitext(os.path.basename(bg_file))[0]
++        try:
++            bg = pd.read_csv(bg_file)
++            bg['label'] = 0  
++            
++        
+[... truncated ...]
+```
+
+- analysis/sensitivityCalculationML/GA.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/GA.py
+@@ -0,0 +1,553 @@
++import numpy as np
++import pandas as pd
++import matplotlib.pyplot as plt
++import random
++from deap import base, creator, tools, algorithms
++import multiprocessing
++import time
++import math
++import copy
++from numba_optimization import optimized_evaluate, prepare_data_for_numba
++import threading
++from concurrent.futures import ThreadPoolExecutor
++
++weights = {
++    'signal': 0.0015552*1.155 * 4,  
++    'Bqq': 0.0349 * 4,              
++    'Btt': 0.503 * 4,               
++    'BZZ': 0.17088*1.155 * 4,       
++    'BWW': 0.5149 * 4,              
++    'BqqX': 0.04347826 * 4,         
++    'BqqqqX': 0.04 * 4,             
++    'BqqHX': 0.001 * 4,             
++    'BZH': 0.00207445*1.155 * 4,    
++    'Bpebb': 0.7536 * 4,            
++    'Bpebbqq': 0.1522 * 4,          
++    'BpeqqH': 0.1237 * 4,           
++    'Bpett': 0.0570 * 4             
++}
++
++def load_data():
++    signal_df = pd.read_csv('signal_predictions.csv')
++    background_dfs = {}
++    background_types = ['Bqq', 'Btt', 'BZZ', 'BWW', 'BqqX', 'BqqqqX', 'BqqHX', 
++                       'BZH', 'Bpebb', 'Bpebbqq', 'BpeqqH', 'Bpett']
++    
++    for bg_type in background_types:
++        bg_file = f'{bg_type}_predictions.csv'
++        background_dfs[bg_type] = pd.read_csv(bg_file)
++    
++    return signal_df, background_dfs
++
++def calculate_significance(thresholds, signal_df, background_dfs):
++    feature_names = signal_df.columns
++    
++    signal_mask = np.ones(len(signal_df), dtype=bool)
++    for i, feature in enumerate(feature_names):
++        signal_mask &= (signal_df[feature] > thresholds[i])
+
+[... truncated ...]
+```
+
+- analysis/sensitivityCalculationML/crossSectionMeasurement.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/crossSectionMeasurement.py
+@@ -0,0 +1,173 @@
++import numpy as np
++import matplotlib.pyplot as plt
++from matplotlib.lines import Line2D
++import math
++import os
++import argparse
++
++# fixed luminosity value in fb^-1 for XCC at 380 GeV, 10-years runtime
++LUMINOSITY = 4900.0
++
++def find_cross_section_HHbbbb(HH_remaining, back_remaining, luminosity=LUMINOSITY):
++    
++    total_remaining = HH_remaining + back_remaining
++    
++    x_min = 50.0
++    x_max = 4000.0
++    
++    branching_ratio_Hbb = 0.5824  
++    total_BR = branching_ratio_Hbb * branching_ratio_Hbb
++    total_effi = HH_remaining / (1462612 * 0.001225 * total_BR)
++    
++    b = back_remaining
++    n = total_remaining
++    
++    print(f"b: {b}    n: {n}    n-b: {n-b}")
++    print(f"Using luminosity: {luminosity} fb^-1")
++    
++    print("Starting chi-squared calculation")
++    x_values = np.arange(x_min, x_max, 0.01)
++    s_values = x_values * total_effi * total_BR
++    
++    chi_squared_values = 2 * ((s_values + b) - n * np.log(s_values + b) + n * np.log(b))
++    
++    min_idx = np.argmin(chi_squared_values)
++    min_chi_squared = chi_squared_values[min_idx]
++    min_x = x_values[min_idx]
++    
++    cross_section = min_x / luminosity
++    
++    print(f"Signal efficiency: {total_effi:.6f}")
++    print(f"Branching ratio: {total_BR:.6f}")
++    print(f"min ChiSquared: {min_chi_squared:.6f} for x: {min_x:.6f}")
++    print(f"Cross section: {cross_section:.6f} fb")
++    
++    plt.figure(figsize=(10, 8))
++    
++    plot_step = max(1, len(x_values) // 10000)
++    plt.plot(x_values[::plot_step
+[... truncated ...]
+```
+
+- analysis/sensitivityCalculationML/numba_optimization.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/numba_optimization.py
+@@ -0,0 +1,70 @@
++from numba import jit
++import numpy as np
++
++@jit(nopython=True)
++def fast_significance_calculation(thresholds, signal_array, bg_arrays, bg_weights, signal_weight):
++
++    n_signal = signal_array.shape[0]
++    n_features = signal_array.shape[1]
++    signal_mask = np.ones(n_signal, dtype=np.bool_)
++    
++    for i in range(n_features):
++        signal_mask = signal_mask & (signal_array[:, i] > thresholds[i])
++    
++    surviving_signal = np.sum(signal_mask) * signal_weight
++    
++    total_surviving_background = 0.0
++    
++    for b in range(len(bg_arrays)):
++        bg_data = bg_arrays[b]
++        n_bg = bg_data.shape[0]
++        bg_mask = np.ones(n_bg, dtype=np.bool_)
++        
++        for i in range(n_features):
++            bg_mask = bg_mask & (bg_data[:, i] > thresholds[i])
++        
++        surviving_bg = np.sum(bg_mask) * bg_weights[b]
++        total_surviving_background += surviving_bg
++    
++    if surviving_signal + total_surviving_background > 0:
++        significance = surviving_signal / np.sqrt(surviving_signal + total_surviving_background)
++    else:
++        significance = 0.0
++    
++    return significance
++
++_cached_data = None
++
++def prepare_data_for_numba(signal_df, background_dfs, weights):
++   
++    global _cached_data
++    
++    if _cached_data is None:
++        signal_array = signal_df.values
++        
++        bg_arrays = []
++        bg_weights = []
++        
++        for bg_type, bg_df in background_dfs.items():
++            bg_arrays.append(bg_df.values)
++            bg_weights.appe
+[... truncated ...]
+```
+
+- analysis/sensitivityCalculationML/pyTorchWholeAnalysis.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/pyTorchWholeAnalysis.py
+@@ -0,0 +1,196 @@
++import os
++import sys
++import subprocess
++import pandas as pd
++import numpy as np
++import time
++import argparse
++from datetime import datetime
++
++def run_bdtg_training():
++    print("\n=== Running BDTG Training ===")
++    try:
++        current_dir = os.path.dirname(os.path.abspath(__file__))
++        bdtg_script = os.path.join(current_dir, "BDTGs.py")
++        
++        subprocess.run([sys.executable, bdtg_script], check=True)
++        print("BDTG training completed successfully!")
++        return True
++    except subprocess.CalledProcessError as e:
++        print(f"Error running BDTG training: {e}")
++        return False
++    except Exception as e:
++        print(f"Unexpected error during BDTG training: {e}")
++        return False
++
++def run_ga_optimization():
++    print("\n=== Running Genetic Algorithm Optimization ===")
++    try:
++        current_dir = os.path.dirname(os.path.abspath(__file__))
++        ga_script = os.path.join(current_dir, "GA.py")
++        
++        subprocess.run([sys.executable, ga_script], check=True)
++        
++        results_file = os.path.join(current_dir, "ga_results.txt")
++        
++        if not os.path.exists(results_file):
++            print("GA results file not found!")
++            return None
++        
++        with open(results_file, 'r') as f:
++            content = f.read()
++        
++        significance_line = content.split('\n')[0]
++        significance = float(significance_line.split(': ')[1])
++        
++        cross_section_data = {}
++        if "=== CROSS
+[... truncated ...]
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Create README.md
+
+CHANGED FILES:
+- analysis/sensitivityCalculationML/README.md
+```diff
+    Create README.md
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/sensitivityCalculationML/README.md
+@@ -0,0 +1 @@
++Full pipleine to perform signal-background separation using XGBoost and a genetic algorithm and then calculate the sensitivity of the measurment of the di-Higgs cross-section.
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Add files via upload
+
+CHANGED FILES:
+- analysis/featureExtraction/TTree2csv.py
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/featureExtraction/TTree2csv.py
+@@ -0,0 +1,93 @@
++import ROOT
++
++# open the file
++f = ROOT.TFile.Open("kinematicFitAnalysisFiles/newVarspe/fittedPythia/BTag85SiD2024XCC/outputTreeBttHHbbbbESpreadDurham1034BSplitSampleN.root")
++
++# get the tree
++t = f.Get("TreeBtt")
++
++# create a csv file
++csv_file = open("pyTorchAnalysis/Btt.csv", "w")
++
++# define header names (in the desired order) excluding the skipped branches
++header_names = [
++    "aplanarity",
++    "invMassB1",
++    "invMassB2",
++    "minJetM",
++    "sphericity",
++    "cosThetaB1",
++    "cosThetaB2",
++    "cosThetaB3",
++    "cosThetaB4",
++    "sumPt",
++    "jetB1Pt",
++    "jetB2Pt",
++    "jetB3Pt",
++    "jetB4Pt",
++    "jetB1M",
++    "jetB2M",
++    "jetB3M",
++    "jetB4M",
++    "jetNObjects",
++    "minJetNObjects",
++    "invMassB1AntiKt",
++    "invMassB2AntiKt",
++    "nJetsAntiKt",
++    "invMassB11Best",
++    "invMassB21Best",
++    "invMassB12Best",
++    "invMassB22Best",
++    "invMassB13Best",
++    "invMassB23Best",
++    "invMassB14Best",
++    "invMassB24Best",
++    "invMassB15Best",
++    "invMassB25Best",
++    "invMassB16Best",
++    "invMassB26Best",
++    "invMassB17Best",
++    "invMassB27Best",
++    "invMassB18Best",
++    "invMassB28Best",
++    "distanceZ1MinChiSquaredZZMass",
++    "distanceZ2MinChiSquaredZZMass",
++    "exclYmerge12",
++    "exclYmerge23",
++    "exclYmerge34",
++    "exclYmerge45",
++    "exclYmerge56",
++    "invMassZZ1",
++    "invMassZZ2",
++    "thrust",
++    "boostB1",
++    "boostB2",
++    "boostB3",
++    "boostB4",
++    "boostSystem",
++    "missingET",
++    "invMass4Jets",
++    "deltaRJetPairs",
++    "pTAssymetry",
++    "jetPairM
+[... truncated ...]
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Create README.md
+
+CHANGED FILES:
+- analysis/README.md
+```diff
+    Create README.md
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/README.md
+@@ -0,0 +1 @@
++code for the full obtention of the sensitivity of the measurment of the di-Higgs cross-section at 380 GeV.
+
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Add files via upload
+
+CHANGED FILES:
+- analysis/featureExtraction/FSRGammaGammaHHbbbb.C
+```diff
+    Add files via upload
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/featureExtraction/FSRGammaGammaHHbbbb.C
+@@ -0,0 +1,6807 @@
++/////Preselection code for the analysis
++
++#ifdef __CLING__
++R__LOAD_LIBRARY(libDelphes)
++#include "classes/DelphesClasses.h"
++#include "external/ExRootAnalysis/ExRootTreeReader.h"
++#include <TH2.h>
++#include <TStyle.h>
++#include <TCanvas.h>
++#include <iostream>
++#include <fstream>
++#include "TMath.h"
++#include "TLine.h"
++#include "TGraph.h"
++#include "TGraph2D.h"
++#include "TGraphErrors.h"
++#include "TArrow.h"
++#include "TEllipse.h"
++#include "TLatex.h"
++#include "TLegend.h"
++#include "TF1.h"
++#include "TTree.h"
++#include "TBranch.h"
++#include "TLorentzVector.h"
++#include "TClonesArray.h"
++#include "TRandom.h"
++#include "TVector3.h"
++#include "TMatrixDSymEigen.h"
++#include "vector"
++#include <vector>
++#include "TMatrixDSym.h"
++#include "TVectorD.h"
++#include "TMVA/Tools.h"
++#include "TMVA/Reader.h"
++#include "TMVA/MethodCuts.h"
++#include <cstdlib>
++#include <map>
++#include <string>
++#include "TChain.h"
++#include "TFile.h"
++#include "TString.h"
++#include "TObjString.h"
++#include "TSystem.h"
++#include "TROOT.h"
++#include <random>
++#include <set>
++#include <queue>
++#include <stdexcept>
++#include <sys/stat.h>
++#include <sstream>
++
++///kinematic fit
++#include "epConstrainHH.h"
++#include "LorentzVectorWithErrors.h"
++#include "pxyConstrainHH.h"
++#include "eqmConstrainHH.h"
++///////kinematic fit
++
++#endif
++
++using namespace std;
++
++void functionLinking()
++{	
++	cout<<5+9-7<<endl;
++	cout<<"functionLinking working"<<endl;
++}
++
++/////kinematic fit
++Double_t funPoly4(Double_t* x, Double_t* par) {
++
++  Double_t xx=x[0];
++  Double_t yy=x[1];
+[... truncated ...]
+```
+
+
+================================================================================
+NEW COMMIT
+================================================================================
+
+COMMIT MESSAGE:
+Create README.md
+
+CHANGED FILES:
+- analysis/featureExtraction/README.md
+```diff
+    Create README.md
+
+new file mode 100644
+--- /dev/null
++++ b/analysis/featureExtraction/README.md
+@@ -0,0 +1,2 @@
++-- root code to extract relevant physical observables from events that pass the preselection.
++-- code that converts the root TTrees with the observables to .csv files and prepares the data to for the pre-training of the decision trees.
+
+```
+
+
+
+####################################################################################################
+
+##############################################################################
+#                          HOT FILES CODE ANALYSIS                           #
+##############################################################################
+
+This section contains key code snippets from the repository's "hot files" - 
+the files that have been modified most frequently in recent commits.
+
+Hot files are particularly significant for understanding the project because:
+
+1. CORE FUNCTIONALITY: Files that are modified frequently often contain the most
+   critical functionality of the project. They represent the "beating heart" of
+   the codebase that developers continually refine and extend.
+
+2. ACTIVE DEVELOPMENT AREAS: These files highlight the specific components that
+   are under active development, indicating where the project's focus and
+   priorities currently lie.
+
+3. TECHNICAL COMPLEXITY: Files requiring frequent changes often represent the most
+   complex or challenging aspects of the system that need ongoing attention and
+   refinement.
+
+4. ARCHITECTURAL SIGNIFICANCE: Hot files frequently represent key architectural
+   components or interfaces that connect multiple parts of the system.
+
+5. EVOLVING REQUIREMENTS: Files with high modification frequency often reflect
+   areas where requirements are still evolving or being refined based on new
+   insights or user feedback.
+
+The following code snippets are extracted from these hot files, focusing on the
+most important patterns and structures that define the project's core functionality.
+These snippets have been selected to provide a representative view of the key
+technical components and patterns used in the most actively developed parts of the
+codebase.
+
+-----------------------------------------------------------------
+CODE SNIPPET: Argument parser setup
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 1-10
+-----------------------------------------------------------------
+import os
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 1-11
+-----------------------------------------------------------------
+import os
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+import sys
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 2-12
+-----------------------------------------------------------------
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+import sys
+import subprocess
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 3-13
+-----------------------------------------------------------------
+import pandas as pd
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+import sys
+import subprocess
+
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 4-14
+-----------------------------------------------------------------
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import roc_auc_score
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+import sys
+import subprocess
+
+np.random.seed(42)
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 8-18
+-----------------------------------------------------------------
+import matplotlib.pyplot as plt
+from tqdm import tqdm
+import argparse
+import sys
+import subprocess
+
+np.random.seed(42)
+
+def load_data(signal_file, background_files, test_size=0.25):
+    signal_data = pd.read_csv(signal_file)
+    signal_data['label'] = 1  # Add label column with value 1 (signal)
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 10-20
+-----------------------------------------------------------------
+import argparse
+import sys
+import subprocess
+
+np.random.seed(42)
+
+def load_data(signal_file, background_files, test_size=0.25):
+    signal_data = pd.read_csv(signal_file)
+    signal_data['label'] = 1  # Add label column with value 1 (signal)
+    
+    print(f"\nSignal file: {os.path.basename(signal_file)}")
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 11-21
+-----------------------------------------------------------------
+import sys
+import subprocess
+
+np.random.seed(42)
+
+def load_data(signal_file, background_files, test_size=0.25):
+    signal_data = pd.read_csv(signal_file)
+    signal_data['label'] = 1  # Add label column with value 1 (signal)
+    
+    print(f"\nSignal file: {os.path.basename(signal_file)}")
+    print(f"Total signal events: {len(signal_data)}")
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 12-22
+-----------------------------------------------------------------
+import subprocess
+
+np.random.seed(42)
+
+def load_data(signal_file, background_files, test_size=0.25):
+    signal_data = pd.read_csv(signal_file)
+    signal_data['label'] = 1  # Add label column with value 1 (signal)
+    
+    print(f"\nSignal file: {os.path.basename(signal_file)}")
+    print(f"Total signal events: {len(signal_data)}")
+    
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Data loading function
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 13-19
+-----------------------------------------------------------------
+
+np.random.seed(42)
+
+def load_data(signal_file, background_files, test_size=0.25):
+    signal_data = pd.read_csv(signal_file)
+    signal_data['label'] = 1  # Add label column with value 1 (signal)
+    
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Import statements
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 162-172
+-----------------------------------------------------------------
+            import cupy
+            gpu_available = True
+            tree_method = 'gpu_hist'
+            predictor = 'gpu_predictor'
+            print("  Using GPU acceleration")
+        except ImportError:
+            gpu_available = False
+            tree_method = 'hist'
+            predictor = 'auto'
+            print("  Using CPU (GPU not available)")
+        
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Model training
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 199-205
+-----------------------------------------------------------------
+        eval_set = [(X_train_main_selected, y_train_main), (X_valid_selected, y_valid)]
+        
+        print("  Training model with early stopping...")
+        model.fit(
+            X_train_main_selected, 
+            y_train_main,
+            eval_set=eval_set,
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Main function call
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 307-352
+-----------------------------------------------------------------
+def main(run_ga=False):
+    signal_file = "signal.csv"
+    background_files = [
+        "Bqq.csv", "Btt.csv", "BZZ.csv", "BWW.csv", 
+        "BqqX.csv", "BqqqqX.csv", "BqqHX.csv", "BZH.csv", 
+        "Bpebb.csv", "Bpebbqq.csv", "BpeqqH.csv", "Bpett.csv"
+    ]
+    
+    weights = {
+        'signal': 0.0015552*1.155,  # weightHH
+        'Bqq': 0.0349,              # weightqq
+        'Btt': 0.503,               # weightttbar
+        'BZZ': 0.17088*1.155,       # weightZZ
+        'BWW': 0.5149,              # weightWW
+        'BqqX': 0.04347826,         # weightqqX
+        'BqqqqX': 0.04,             # weightqqqqX
+        'BqqHX': 0.001,             # weightqqHX
+        'BZH': 0.00207445*1.155,    # weightZH
+        'Bpebb': 0.7536,            # weightpebb
+        'Bpebbqq': 0.1522,          # weightpebbqq
+        'BpeqqH': 0.1237,           # weightpeqqH
+        'Bpett': 0.0570             # weightpett
+    }
+    
+    # load and prepare data
+    print("Loading and preparing data...")
+    datasets, signal_test, background_tests = load_data(signal_file, background_files)
+    
+    # train XGB models (originally BDTG so naming matches that)
+    print("\nTraining XGB models...")
+    models = train_bdtg_models(datasets)
+    
+    # apply to all event topologies and create prediction files
+    print("\nApplying models and creating prediction files...")
+    predictions = apply_models(models, datasets, signal_test, background_tests)
+    
+    print("\nXGB analysis complete! All prediction files have been saved.")
+    
+    if run_ga:
+        run_genetic_algorithm()
+
+def run_genetic_algorithm():
+
+    print("\nStarting Genetic Algorithm optimization...")
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Data loading function
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 330-336
+-----------------------------------------------------------------
+    
+    # load and prepare data
+    print("Loading and preparing data...")
+    datasets, signal_test, background_tests = load_data(signal_file, background_files)
+    
+    # train XGB models (originally BDTG so naming matches that)
+    print("\nTraining XGB models...")
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Main function call
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 348-366
+-----------------------------------------------------------------
+def run_genetic_algorithm():
+
+    print("\nStarting Genetic Algorithm optimization...")
+    try:
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        ga_script = os.path.join(current_dir, "GA.py")
+        
+        subprocess.run([sys.executable, ga_script], check=True)
+        print("\nGenetic Algorithm optimization completed successfully!")
+    except subprocess.CalledProcessError as e:
+        print(f"\nError running Genetic Algorithm: {e}")
+    except Exception as e:
+        print(f"\nUnexpected error: {e}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Run BDTG analysis with optional GA optimization')
+    parser.add_argument('--run-ga', action='store_true', 
+                        help='Run GA.py after generating BDTG predictions')
+    
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Main execution block
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 357-367
+-----------------------------------------------------------------
+    except subprocess.CalledProcessError as e:
+        print(f"\nError running Genetic Algorithm: {e}")
+    except Exception as e:
+        print(f"\nUnexpected error: {e}")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Run BDTG analysis with optional GA optimization')
+    parser.add_argument('--run-ga', action='store_true', 
+                        help='Run GA.py after generating BDTG predictions')
+    
+    args = parser.parse_args()
+
+
+
+-----------------------------------------------------------------
+CODE SNIPPET: Argument parser setup
+FILE: analysis/sensitivityCalculationML/BDTGs.py
+LINES: 363-363
+-----------------------------------------------------------------
+    parser = argparse.ArgumentParser(description='Run BDTG analysis with optional GA optimization')
+
